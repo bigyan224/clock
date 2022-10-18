@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #res{
+        font-size: 100px;
+        text-align: center;
+        font-family: Verdana;
+        color:blue;
+        background-color: black;
+    }
+    
+</style>
+<body onload="time()">
+    <div id="bg"></div>
+    <h1 id="res">
+        
+    </h1>
+    
+</body>
+<script>
+    function time(){
+        var d=new Date();
+        var h=d.getHours();
+        var m=d.getMinutes();
+        var s=d.getSeconds();
+        var ms=d.getMilliseconds();
+
+        h=h<10 ? "0"+h: h;
+        m=m<10 ? "0"+m: m;
+        s=s<10 ? "0"+s: s;
+        ms=ms<10 ? "0"+ms: ms;
+
+
+var session=" AM";
+if(h>=12){
+    h=h-12;
+    session=" PM";
+}
+
+
+        var show=h + " : "+ m + " : " +s +":" +ms + session;
+        document.getElementById("res").innerText=show;
+        setTimeout(time,1);
+        
+    }
+</script>
+</html>
